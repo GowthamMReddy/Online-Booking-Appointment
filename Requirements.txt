@@ -1,2 +1,3 @@
-#wheel
-#
+# Creating a Lottery Game where user will spin the wheel
+# Spinner picks the random number and points towards it
+# wheel rotates on click
