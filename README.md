@@ -1,7 +1,7 @@
-# E-Ticket-Booking-for-Bus-Train
+# E-Ticket-Booking-lottery
 B9IS123_2223_Group_C
 
-# Implement online ticket booking platform for Bus
+# Implement online ticket booking platform for lottery
 
 # Design the project
 # test commit
