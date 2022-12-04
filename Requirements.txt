@@ -1,3 +1,16 @@
-# Creating a Lottery Game where user will spin the wheel
+# Scenario1: Happy Path
+   #New User complete the registration process
+   #User Details are saved in the Database
+   #And click on buy a ticket
+   #And buy a ticket
+   #And User is allowed to participate in the lottery Game
+   #And User is runs the spinning wheel
+   #User is displayed with the result
+   
+#Scenario2: Existing User login into the application
+
+
+
+#Creating a Lottery Game where user will spin the wheel
 # Spinner picks the random number and points towards it
 # wheel rotates on click
