@@ -13,4 +13,6 @@ def create_webapp():
    # webapp.config['SECRET_KEY'] = 'abcd abcdefg'
    # webapp.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAM}'
     sqldb.init_app(webapp)
-    return webapp
+from flask import Flask
+
+def create(mailbox)
