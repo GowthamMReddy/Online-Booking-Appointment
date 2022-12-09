@@ -7,12 +7,14 @@ sqldb = SQLAlchemy()
 DB_NAM = "database.sqldb"
 
 
-def create_webapp():
-    webapp = Flask(__name__)
+def create_app():
+    app = Flask(__name__)
     # Ideally for production secret key is not added
-   # webapp.config['SECRET_KEY'] = 'abcd abcdefg'
-   # webapp.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAM}'
-    sqldb.init_app(webapp)
-from flask import Flask
+    app.config['SECRET_KEY'] = 'abcd abcdefg'
+    
+    return app
+    
+   # app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAM}'
+    sqldb.init_app(app)
 
-def create(mailbox)
+    
