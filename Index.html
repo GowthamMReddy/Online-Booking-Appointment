@@ -1,36 +1,62 @@
-from flask import *
-import cx_Oracle
+<html>
 
 
+<head>
+    <link rel="stylesheet" type="text/css" href="Stylesheets\register.css" >
 
-app = Flask(__name__)
+</head>
 
-@app.route('/home', methods= ['GET','POST'])
-def home():
-    First_Name = request.form['firstName']
-    LastName = request.form['lastName']
-    Email = request.form['email']
-    Phone = request.form['phone']
-    Password = request.form["password"]
+<body>
+
+    <header>
+        <nav class="nav" id="back-to-nav">
+            <div >
+                <a href="#" class="log-link">E-Ticket-Lottery</a>
+            </div>
+            <div>
+                <a href="#open-register" class="nav-link">Register</a>
+                <a href="#open-login" class="nav-link">Login</a>
+            </div>
+
+        </nav>
+    </header>
+
+    <main class="main">
+
+        <div class="register " id="open-register">
+
+            <form action="http://127.0.0.1:5000/home" method="post"  taget="_blank" class="register-form">
+
+                <a href="#back-to-nav" class="close">&times</a>
+                <h1 class="to-register">Register</h1>
+                <input class="input-fields" type="text" value="" name="firstName" placeholder="First Name"><br>
+                <input class="input-fields" type="text" value="" name="lastName" placeholder="Last Name"><br>
+                <input class="input-fields" type="email" name="email" placeholder="Email"><br>
+                <input class="input-fields" type="phone" name="phone" placeholder="Phone Number"><br>
+                <input class="input-fields" type="pasword" name="password" placeholder="Password">
+                <input class="input-fields submit" type="submit" value="Register">
 
 
-    
-    path = 'system/sys@//localhost:1521/xe'
-    cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7")
-    connection = cx_Oracle.connect(path) 
-    cursor = connection.cursor()
-    cursor.execute("""insert into Register values(:firstname, :lastname, :email, :phone, :password)""",firstname = First_Name,lastname = LastName, email = Email, phone = Phone, password = Password )
-    connection.commit()
-
+            </form>
+        </div>
 
         
-    if request.method == 'POST':
-         return ' HELLO %s'%First_Name
+        <div class="login"  id="open-login">
 
-    else:
-        return 'erroe'
+            <form action="" method="post" class="login-form">
 
- 
+                <a href="#back-to-nav" class="close-login">&times</a>
+                <h1 class="to-login">Login</h1>
+                <input class="input-fields" type="email" value="" placeholder="Email Id"><br>
+                <input class="input-fields" type="password" value="" placeholder="Password"><br>
+                <input class="input-fields submit" type="submit" value="Login">
 
-if __name__ == '__main__':
-    app.run(debug = True)
+
+
+            </form>
+        </div>
+
+        </main>
+</body>
+
+</html>
