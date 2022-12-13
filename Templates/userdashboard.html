@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="Stylesheets\userdashboard.css" >
+        <link rel="stylesheet" href="/static/userdashboard.css" >
         <title>UserDashboard</title>
     </head>
 
@@ -10,29 +10,28 @@
             <header>Lottery E-Ticket Booking</header>
         </div>
         <nav class="UserDashboard">
-            <div class="Userdetails">
                 <div class="User_section">
-                    <label class="user_info">User Name :
+                    <div class="user_info">User Name :
                         <input type="text" value="" id="user-name">
-                    </label><br>
-                    <label class="user_info">Age :
+                    </div><br>
+                    <div class="user_info">Age :
                         <input type="number" value="0" min="18" max="60" id="age">
-                    </label><br>
-                    <label class="user_info">Date & Time :
+                    </div><br>
+                    <div class="user_info">Date & Time :
                         <input type="datetime-local" value="" id="date_time" >
-                    </label><br>
-                    <label class="user_info">Lottery Type :
+                    </div><br>
+                    <div class="user_info">Lottery Type :
                         <select>
-                            <option>Basic</option>
-                            <option>Standard</option>
-                            <option>Premium</option>
+                            <option>{{value1}}</option>
+                            <option>{{value2}}</option>
+                            <option>{{value3}}</option>
                         </select>
-                    </label><br>
-                    <input type="button" value="Cancel Ticket" id="cancel_ticket">
-                    <input type="button" value="Book Ticket" id="book_ticket">
-
+                    </div><br>
+                    <div class="user_info" id="user_button">
+                        <input type="button" value="Cancel Ticket" class="button_ticket">
+                        <input type="button"  value="Book Ticket" class="button_ticket">
+                    </div>
                 </div>
-            </div>
         </nav>
     </body>
 

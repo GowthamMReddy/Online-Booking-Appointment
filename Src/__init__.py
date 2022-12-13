@@ -12,5 +12,5 @@ def create_webapp():
     # Ideally for production secret key is not added
    # webapp.config['SECRET_KEY'] = 'abcd abcdefg'
    # webapp.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAM}'
-    sqldb.init_app(webapp)
+    #sqldb.init_app(webapp)
     return webapp

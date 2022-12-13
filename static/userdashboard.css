@@ -3,7 +3,7 @@ body
     margin: 0;
     font-size: 100%;
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url(../Images/lottery_img3.jpg);
+    background-image: url(/static/images/lottery_screen.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -12,7 +12,7 @@ body
     width: 100%;
     height: 50px;
     padding: 10px;
-    background-color:bisque;
+    background-color:burlywood;
     margin-top: 0px;
     margin-right: 10px;
     display: block;
@@ -32,27 +32,40 @@ body
     display: block;
     box-sizing: border-box;
     text-align: center;
-    margin: 180px;
+    margin: 140px;
     padding: 50px;
     height: 50%;
-    background-color:transparent;
-}
+    background: rgba(222,184,135,0.8);
+    border-color: black;
+    border-radius: 10rem;
+    border-width: 5px;
 
-.Userdetails{
-    display: block;
 }
-
 .User_section{
-    display: flexbox;
+    display:block;
     padding: 2px;
     font-size: 100%;
     font-weight: 500;
-    color:black;
+    align-items:center;
 }
 
-.User_section .user-name{
-    padding: 5px;
+.User_section .user_info{
+    padding-left: 320px;
     width: 50%;
     height: 50%;
-    margin: 5px;
+    font: bold;
+    font-weight: 600;
+    margin-left: 0px;
+    text-align: left;
+}
+
+.button_ticket{
+    display:inline-flex;
+    align-content:space-between;
+    padding: 5px;
+    background-color: rgb(243, 180, 102);
+}
+
+.button_ticket :hover{
+    transform: translateY(-5px);
 }
