@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="Stylesheets\userdashboard.css" >
+        <title>UserDashboard</title>
+    </head>
+
+    <body>
+        <div class="nav_dashboard">
+            <header>Lottery E-Ticket Booking</header>
+        </div>
+        <nav class="UserDashboard">
+            <div class="Userdetails">
+                <div class="User_section">
+                    <label class="user_info">User Name :
+                        <input type="text" value="" id="user-name">
+                    </label><br>
+                    <label class="user_info">Age :
+                        <input type="number" value="0" min="18" max="60" id="age">
+                    </label><br>
+                    <label class="user_info">Date & Time :
+                        <input type="datetime-local" value="" id="date_time" >
+                    </label><br>
+                    <label class="user_info">Lottery Type :
+                        <select>
+                            <option>Basic</option>
+                            <option>Standard</option>
+                            <option>Premium</option>
+                        </select>
+                    </label><br>
+                    <input type="button" value="Cancel Ticket" id="cancel_ticket">
+                    <input type="button" value="Book Ticket" id="book_ticket">
+
+                </div>
+            </div>
+        </nav>
+    </body>
+
+</html>
