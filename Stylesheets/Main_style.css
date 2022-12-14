@@ -42,10 +42,12 @@ body header .nav .nav-link
 }
 body .main
 {
-    height:92.7vh;
-    background-image: linear-gradient(to right,rgba(0,0,0,0),rgba(0,0,0,0.9)),url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF3ewxUfpYy6ma4fT_bmcsYHEN0KfL9Mg6YA&usqp=CAU");
+    height:130%;
+    background-image: linear-gradient(to right,rgba(0,0,0,0),rgba(0,0,0,0.9)),
+    url("https://d1m75rqqgidzqn.cloudfront.net/wp-data/2020/06/15133257/shutterstock_1054604270.jpg");
     width: 100%;
     background-color: black;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -185,3 +187,5 @@ body .main .login .login-form .submit:hover
         background-color: skyblue;
 
 }
+
+
