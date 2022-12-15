@@ -3,7 +3,9 @@ import cx_Oracle
 
 
 
+
 app = Flask(__name__)
+
 
 @app.route('/Register', methods= ['GET','POST'])
 def Register():
@@ -21,12 +23,10 @@ def Register():
     cursor = connection.cursor()
     cursor.execute("""insert into Register values(:firstname, :lastname, :email, :phone, :password)""",firstname = First_Name,lastname = LastName, email = Email, phone = Phone, password = Password )
     connection.commit()
+    return render_template('Index.html')
     
-    if request.method == 'POST':
-         return ' HELLO %s'%First_Name
 
-    else:
-        return 'erroe'
+    
 
 
 @app.route('/Login', methods = ['POST','GET'])
@@ -37,11 +37,11 @@ def Login():
     cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7")
     connection = cx_Oracle.connect(path) 
     cursor = connection.cursor()
-    cursor.execute("""select * from Register where  EMAIL_ID = :email""",email = Login_Email ) 
+    cursor.execute("""select EMAIL_ID,PASSWORD from Register where  EMAIL_ID = :email and PASSWORD = :password """,email = Login_Email, password = Login_Password ) 
     for i in cursor.fetchmany():
-        if i[2] == Login_Email and i[4] == Login_Password:
-            print(i[2])
-
+        if i[0] == Login_Email and i[1] == Login_Password:
+            return render_template('Index.html')
+      
         
     
     
