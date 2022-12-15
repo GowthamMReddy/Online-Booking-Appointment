@@ -1,0 +1,187 @@
+*,*::after,*::before
+{
+
+    margin:0;
+    padding:0;
+    box-sizing: inherit;
+}
+html
+{
+    font-size :62.5%;
+    box-sizing: border-box;
+}
+body
+{
+    position: relative;
+
+}
+
+
+body header .nav
+{   
+
+    
+    height: 7rem;
+    background-color:#161616; 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+body header .nav .log-link
+{
+        text-decoration:none;
+        font-size: 2rem;
+        color: white;
+}
+body header .nav .nav-link
+{
+    text-decoration:none;
+    font-size: 2rem;
+    padding:2rem;
+    color: white;
+}
+body .main
+{
+    height:92.7vh;
+    background-image: linear-gradient(to right,rgba(0,0,0,0),rgba(0,0,0,0.9)),url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF3ewxUfpYy6ma4fT_bmcsYHEN0KfL9Mg6YA&usqp=CAU");
+    width: 100%;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+body .main .register
+{   
+    opacity:0;
+    visibility: hidden;
+    position: absolute;
+    left:0;
+    top:0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+body .main .register:target
+{
+    opacity:1;
+    visibility: visible;
+
+}
+body .main .register .register-form
+{   
+    height:80rem;
+    width:90rem;
+    background-color: white;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:  translate(-50%, -50%);
+    border-radius: 5rem;
+    text-align: center;
+
+}
+body .main .register .register-form .close
+{
+    
+    position:absolute;
+    left:84rem;
+    top:2rem;
+    text-decoration: none;
+    font-size:3rem;
+}
+body .main .register .register-form .to-register
+{
+
+ padding:5rem;   
+ font-size:5rem;
+ 
+
+}
+
+body .main .register .register-form  .input-fields
+{
+
+        width:80%;
+        height:8rem;
+        margin-bottom:2rem;
+        border-radius: 1.5rem;
+        border:0;
+        border-bottom:0.2rem solid black ;
+}
+body .main .register .register-form .submit
+{
+    cursor:pointer;
+
+}
+body .main .register .register-form .submit:hover
+{
+    background-color:skyblue;
+
+}
+body .main .login{
+    opacity:0;
+    visibility:hidden;
+    position: absolute;
+    left:0;
+    top:0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0,0,0,0.8);
+    
+}
+body .main .login:target
+{
+
+    opacity:1;
+    visibility:visible;
+    
+}
+
+body .main .login .login-form
+{   
+    height:70rem;
+    width:90rem;
+    background-color: white;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:  translate(-50%, -50%);
+    border-radius: 5rem;
+    text-align: center;
+
+}
+body .main .login .login-form .close-login
+{
+
+position:absolute;
+    left:84rem;
+    top:2rem;
+    text-decoration: none;
+    font-size:3rem;
+
+}
+body .main .login .login-form .to-login
+{
+    margin-top: 5rem;
+
+
+}
+
+body .main .login .login-form  .input-fields
+{
+
+        width:80%;
+        height:8rem;
+        margin-top: 5rem;
+        margin-bottom:2rem;
+        border-radius: 1.5rem;
+        border:0;
+        border-bottom:0.2rem solid black ;
+}
+body .main .login .login-form .submit:hover
+{
+
+        cursor:pointer;
+        background-color: skyblue;
+
+}
