@@ -43,21 +43,5 @@ def Login():
             return render_template('Index.html')
       
         
-    
-    
-    
-    if request.method == 'POST':
-         return ' HELLO %s'%Login_Email
-
-    else:
-        return 'erroe'
-
-
-    
-
-
-
-
-
 if __name__ == '__main__':
     app.run(debug = True)
