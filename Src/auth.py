@@ -17,8 +17,11 @@ def register_db():
     cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7")
     connection = cx_Oracle.connect(path) 
     cursor = connection.cursor()
+    try:
+        cursor.execute("create table Register (first_name varchar(10),last_name varchar(10),email_id varchar(100),phone number(10),password varchar(10))")
     
-    
+    except:
+        print("table present")
     cursor.execute("""select FIRST_NAME,EMAIL_ID from Register where FIRST_NAME = :first_name and EMAIL_ID = :email""",first_name = First_Name, email = Email )
     isAvailable = False
     for i in cursor.fetchmany():
@@ -29,7 +32,7 @@ def register_db():
         connection.commit()
         return render_template('Index.html')
     else:
-        return 'user parsent'
+        return "you have alreay register"
 
        
    
@@ -42,14 +45,26 @@ def login_db():
     cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7")
     connection = cx_Oracle.connect(path) 
     cursor = connection.cursor()
+    try:
+        cursor.execute("create table Login (email_id varchar(100),password_ varchar(10))")
+    except:
+        print("table present")
+
+    connection.commit()
     cursor.execute("""select EMAIL_ID,PASSWORD from Register where  EMAIL_ID = :email and PASSWORD = :password """,email = Login_Email, password = Login_Password ) 
     isAvailable = False
     for i in cursor.fetchmany():
         if i[0] == Login_Email and i[1] == Login_Password:
+            cursor.execute("""insert into Login values(:email,:password)""",email = Login_Email, password = Login_Password)
+            connection.commit()
             isAvailable = True
-            return render_template('Index.html')
+            return render_template('userdashboard.html')
     if isAvailable == False:
         return 'strinr'
+
+@app.route('/spin')
+def spin():
+    return render_template("Spinning_wheel.html")
     
     
        
