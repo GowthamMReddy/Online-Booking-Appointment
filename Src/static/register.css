@@ -21,11 +21,12 @@ body header .nav
 {   
 
     
-    height: 7rem;
+    height: 10rem;
     background-color:#161616; 
     display: flex;
     justify-content: space-around;
     align-items: center;
+    
 }
 body header .nav .log-link
 {
@@ -43,7 +44,7 @@ body header .nav .nav-link
 body .main
 {
     height:92.7vh;
-    background-image: linear-gradient(to right,rgba(0,0,0,0),rgba(0,0,0,0.9)),url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF3ewxUfpYy6ma4fT_bmcsYHEN0KfL9Mg6YA&usqp=CAU");
+    background-image: linear-gradient(to right,rgba(0,0,0,0),rgba(0,0,0,0.9)),url("https://mir-s3-cdn-cf.behance.net/project_modules/1400/63a09a69319507.5b7cf40c7fd86.png");
     width: 100%;
     background-color: black;
     background-repeat: no-repeat;
