@@ -24,9 +24,9 @@ User is displayed with the booking details on user dashboard screen.
 
 Implement online appointment booking platform
 
-Integration with Stripe API for the payment gateway checkout
-Integration with Oracle database to keep the track of the user details : 
-User details are inserted at the time of registration
-User details are fetched at the time of login
-User details are updated when user updates from front-end application
-User details are deleted when user cancel the booked appointment from application
+1. Integration with Stripe API for the payment gateway checkout
+2. Integration with Oracle database to keep the track of the user details : 
+3. User details are inserted at the time of registration
+4. User details are fetched at the time of login
+5. User details are updated when user updates from front-end application
+6. User details are deleted when user cancel the booked appointment from application
