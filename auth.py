@@ -38,6 +38,9 @@ def register_db():
     else:
         return "you have already register"
 
+@app.route('/login')
+def login():
+    return render_template('login.html')
        
    
 
