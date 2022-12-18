@@ -15,7 +15,7 @@ def register_db():
     Phone = request.form['phone']
     Password = request.form["password"]
     path = 'system/sys@//localhost:1521/xe'
-    cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7")
+    cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7-20221215T235126Z-001\instantclient_21_7")
     connection = cx_Oracle.connect(path) 
     cursor = connection.cursor()
     try:
@@ -31,6 +31,7 @@ def register_db():
     if isAvailable == False :
         cursor.execute("""insert into Register values(:firstname, :lastname, :email, :phone, :password)""",firstname = First_Name,lastname = LastName, email = Email, phone = Phone, password = Password )
         connection.commit()
+        
         return render_template('Index.html')
     else:
         return "you have already register"
@@ -43,7 +44,7 @@ def login_db():
     Login_Email = request.form["login_email"]
     Login_Password = request.form["login_password"]
     path = 'system/sys@//localhost:1521/xe'
-    cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7")
+    cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7-20221215T235126Z-001\instantclient_21_7")
     connection = cx_Oracle.connect(path) 
     cursor = connection.cursor()
     try:
@@ -67,8 +68,14 @@ def login_db():
 
 @app.route("/user_profile", methods = ['POST', 'GET'])
 def user_profile():
-    
-    return render_template("user_profile.html")
+
+        path = 'system/sys@//localhost:1521/xe'
+        cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7-20221215T235126Z-001\instantclient_21_7")
+        connection = cx_Oracle.connect(path) 
+        cursor = connection.cursor()
+        cursor.execute("""select FIRST_NAME from Register """)
+        
+        return render_template("user_profile.html")
     
     
        
