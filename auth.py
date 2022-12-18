@@ -1,5 +1,4 @@
 from flask import *
-from views import views
 import cx_Oracle
 from datetime import datetime
 
@@ -71,7 +70,7 @@ def login_db():
     if isAvailable == False:
         return 'password is wrong'
 
-app.route('/userdashboard_db', methods= ['GET','POST'])
+app.route('/userdashboard_db', methods= ['POST','GET'])
 def userdashboard_db():
     User_Name = request.form['user_name']
     Age = request.form['age']
@@ -82,22 +81,22 @@ def userdashboard_db():
     path = 'system/sys@//localhost:1521/xe'
     cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7")
     connection = cx_Oracle.connect(path) 
-    cursor = connection.cursor('userdashboard.html')
+    cursor = connection.cursor()
     try:
         cursor.execute("create table bookings (user_name varchar(20),age number(10),user_appointment varchar(50),lawyer_name varchar(10),lawyer_addr varchar(100), lawyer_contact(10)")
     
     except:
-        print("table present")
+        return("table present")
 
-    cursor.execute("""select USER_NAME from BOOKINGS where USER_NAME = :user_name""",user_name = User_Name )
+    cursor.execute("""select USER_NAME from bookings where USER_NAME = :user_name""",user_name = User_Name )
     isAvailable = False
     for i in cursor.fetchmany():
         if i[0] == User_Name:
             isAvailable = True
     if isAvailable == False :
-        cursor.execute("""insert into Register values(:username, :age, :user_appointment, :lawyer-name, :lawyer-addr, :lawyer-contact)""",user_name = User_Name, age=Age, user_appointment=Appointment, lawyer_name=LawyerName, lawyer_addr=LawyerAddr, lawyer_contact=LawyerConatct  )
+        cursor.execute("""insert into bookings values(:username, :age, :user_appointment, :lawyer-name, :lawyer-addr, :lawyer-contact)""",user_name = User_Name, age=Age, user_appointment=Appointment, lawyer_name=LawyerName, lawyer_addr=LawyerAddr, lawyer_contact=LawyerConatct  )
         connection.commit()
-        return render_template('userdashboard.html')
+        return render_template('Index.html')
     else:
         return 'Time slot is booked for lottery ticket, please select other time'
 
