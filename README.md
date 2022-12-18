@@ -15,10 +15,11 @@ Likhith Pindi             - 10614739
 
 ------Design the project framework-------- 
 Flask Framework Implemented with the below list of Softwares:
-HTML
-CSS
-Oracle 
-Stripe payment gateway API
+
+1. HTML
+2. CSS
+4. Oracle 
+5. Stripe payment gateway API
 
 ---------------------------E-Booking is a front-end---------------
 
