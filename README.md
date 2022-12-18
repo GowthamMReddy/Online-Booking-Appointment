@@ -1,6 +1,6 @@
 Online-Booking-Appointment in Python
 
----------------------------Project Group Details
+------Project Group Details----------
 B9IS123_2223_Group_C
 
 Student Name              - Student ID
@@ -13,18 +13,21 @@ Venkatrao Seelam          - 10625132
 
 Likhith Pindi             - 10614739
 
---------------------------Design the project framework 
+------Design the project framework-------- 
 Flask Framework Implemented with the below list of Softwares:
 HTML
 CSS
 Oracle 
 Stripe payment gateway API
 
----------------------------E-Booking is a front-end implementation of buying tickets online via payment checkout and book an appointment.
+---------------------------E-Booking is a front-end---------------
+implementation of buying tickets online via payment checkout and book an appointment.
+
 Once user has ticket he can see the boking details and have an option to update and delete his booking. 
+
 User is displayed with the booking details on user dashboard screen.
 
--------------------------Functionality of the Application<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+-------------------------Functionality of the Application----------
 
 Implement online appointment booking platform
 
