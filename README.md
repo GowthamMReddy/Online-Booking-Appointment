@@ -84,3 +84,10 @@ Worked with html, css, javascript, python
  Created requirements file to create the scenarios for testing and development of the web application.
 Managed and contributed in devOps tool git for this project with separate branches for all and merge the code into main as to track down the latest code changes.
 Helped team members  to clone the project in different machines while working on a group project and helped in using git commands. 
+
+
+
+Venkat(10625132) :
+ Understood application and created business requirements. Updated the user dashboard page with the user profile button. made changes in HTML page and CSS page. helped group members with DB configuration and designing the webpage, fixed defects while debugging the application. Performed testing on application to make sure everything is working as expected.
+I used Hypertext Markup Language (HTML5) to create a spinning wheel page and using CSS3, like as colour, font size, and more, I'm adding styling for creating that html page and also write a code for java script for spinning the wheel and also I'm integrating with pyhton flask. It is standard alone application. In that HTML page was integrating flask. After that I’m creating alert message using HTML page for that styling purpose, I’m using CSS and then I"m integrate with pyhton flak with this code. I’m helping with groups members for checking the code and test the code entire code. Working together for login and signup pages by using html pages and css.
+
