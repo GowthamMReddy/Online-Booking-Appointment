@@ -61,7 +61,7 @@ def login_db():
                 cursor.execute("""insert into Login values(:email,:password,:date_time)""",email = Login_Email, password = Login_Password ,date_time = Date_Time)
                 connection.commit()
                 isAvailable = True
-                return render_template('user_profile.html')
+                return render_template('userdashboard.html')
     if isAvailable == False:
         return 'password is wrong'
 
