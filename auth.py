@@ -1,5 +1,6 @@
 from flask import *
 import cx_Oracle
+from datetime import datetime
 
 app = Flask(__name__)
 @app.route('/')
@@ -32,12 +33,12 @@ def register_db():
         connection.commit()
         return render_template('Index.html')
     else:
-        return "you have alreay register"
+        return "you have already register"
 
        
    
 
-@app.route('/login_db', methods = ['POST','GET'])
+@app.route('/login_db',methods = ['POST','GET'])
 def login_db():
     Login_Email = request.form["login_email"]
     Login_Password = request.form["login_password"]
@@ -46,7 +47,7 @@ def login_db():
     connection = cx_Oracle.connect(path) 
     cursor = connection.cursor()
     try:
-        cursor.execute("create table Login (email_id varchar(100),password_ varchar(10))")
+        cursor.execute("create table Login (email_id varchar(100),password_ varchar(10),date_time varchar2(100))")
     except:
         print("table present")
 
@@ -55,16 +56,19 @@ def login_db():
     isAvailable = False
     for i in cursor.fetchmany():
         if i[0] == Login_Email and i[1] == Login_Password:
-            cursor.execute("""insert into Login values(:email,:password)""",email = Login_Email, password = Login_Password)
-            connection.commit()
-            isAvailable = True
-            return render_template('userdashboard.html')
+                Date_Times = datetime.now()
+                Date_Time = Date_Times.strftime("%d/%m/%Y %H:%M:%S")
+                cursor.execute("""insert into Login values(:email,:password,:date_time)""",email = Login_Email, password = Login_Password ,date_time = Date_Time)
+                connection.commit()
+                isAvailable = True
+                return render_template('user_profile.html')
     if isAvailable == False:
         return 'password is wrong'
 
-@app.route('/spin')
-def spin():
-    return render_template("Spinning_wheel.html")
+@app.route("/user_profile", methods = ['POST', 'GET'])
+def user_profile():
+    
+    return render_template("user_profile.html")
     
     
        

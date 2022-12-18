@@ -2,12 +2,29 @@
 <html>
     <head>
         <link rel="stylesheet" href="{{url_for('static', filename='userdashboard.css')}}" >
+        <link rel="stylesheet" href="D:\DBS\New folder\static\userdashboard.css" >
+
         <title>UserDashboard</title>
     </head>
 
     <body>
         <div class="nav_dashboard">
-            <header>Online Booking</header>
+
+            <a href="#" class = "user_log margin">Online Booking</a>
+
+            <div class="user_update">
+
+               
+                <a href="#" class = "user_log margin">Update Profile</a>
+                 
+                    
+                 
+            </div>
+
+            {% block content %} {% endblock %}
+            
+            
+            
         </div>
         <nav class="UserDashboard">
                 <div class="User_section">
