@@ -1,21 +1,87 @@
+*,*::after,*::after
+{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+
+}
+html{
+
+
+    font-size:62.5%;
+    box-sizing: border-box;
+}
+
+
 body
 {
     margin: 0;
+    padding: 0 ;
     font-size: 100%;
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url(/Templates/Images/Appointment.jpg);
+    background-image: url(/templates/Images/Appointment.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    position:relative;
+    perspective: none;
+    overflow: hidden;
 }
 
 .nav_dashboard{
     width: 100%;
-    height: 50px;
-    padding: 10px;
-    background-color:burlywood;
-    margin-top: 0px;
-    margin-right: 10px;
-    display: block;
+    height: 10rem;
+    background-color:burlywood;;
+    display :flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 2rem;
+    
+    
+}
+.margin
+{
+
+    margin-right: 2rem;
+    text-decoration:none;
+    color:black;
+    font-weight: 50rem;
+}
+.back_screen
+{
+
+    position:absolute;
+    top:0;
+    left:0;
+    background-color: rgba(0,0,0,0.9);
+    height:100vh;
+    width:100%;
+    z-index: 1;
+
+}
+
+.user_profile
+{
+position:absolute;
+top:50%;
+left:50%;
+transform: translate(-50%, -50%);
+height:50rem;
+width:80rem;
+z-index: 2;
+background-color: white;
+
+}
+.close
+{
+    display: inline-block;
+    position:absolute;
+    top:1rem;
+    left:75rem;
+    font-size:4rem;
+    text-decoration: none;
+    color:black;
+
 }
 
 .nav_dashboard header{
@@ -32,40 +98,50 @@ body
     display: block;
     box-sizing: border-box;
     text-align: center;
-    margin: 140px;
-    padding: 50px;
+    margin: 14rem;
+    padding: 5rem;
     height: 50%;
     background: rgba(222,184,135,0.8);
     border-color: black;
     border-radius: 10rem;
-    border-width: 5px;
+    border-width: 0.5px;
 
 }
 .User_section{
     display:block;
-    padding: 2px;
+    padding: 3rem;
     font-size: 100%;
     font-weight: 500;
     align-items:center;
 }
 
 .User_section .user_info{
-    padding-left: 320px;
+    padding-left: 32rem;
     width: 50%;
     height: 50%;
     font: bold;
+    font-size:2rem;
     font-weight: 600;
     margin-left: 0px;
     text-align: left;
+    margin-bottom: 1.5rem;
+    margin-left: 1rem;
+}
+#user-name
+{   
+    height:3rem;
+
 }
 
 .button_ticket{
     display:inline-flex;
     align-content:space-between;
-    padding: 5px;
+    padding: 0.5rem;
+    cursor:pointer;
     background-color: rgb(243, 180, 102);
 }
 
 .button_ticket :hover{
     transform: translateY(-5px);
+    
 }
