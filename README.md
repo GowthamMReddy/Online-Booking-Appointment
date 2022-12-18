@@ -1,8 +1,13 @@
-<<<<<<< HEAD
-E-Ticket Booking lottery in Python
-B9IS123_2223_Group_C
+Online-Booking-Appointment in Python
 
-Implement online ticket booking platform for lottery
+B9IS123_2223_Group_C
+Rashmee Saxena            - 10632656
+Gowtham Munivenkata Reddy - 10624812
+Venkatrao Seelam          - 10625132
+Likhith Pindi             - 10614739
+
+
+Implement online appointment booking platform for lottery
 Design the project
 
 =======

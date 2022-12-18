@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="/static/userdashboard.css" >
+        <link rel="stylesheet" href="{{url_for('static', filename='userdashboard.css')}}" >
         <title>UserDashboard</title>
     </head>
 
     <body>
         <div class="nav_dashboard">
-            <header>Lottery E-Ticket Booking</header>
+            <header>Online Booking</header>
         </div>
         <nav class="UserDashboard">
                 <div class="User_section">
@@ -27,12 +27,28 @@
                             <option>{{value3}}</option>
                         </select>
                     </div><br>
-                    <div class="user_info" id="user_button">
-                        <input type="button" value="Cancel Ticket" class="button_ticket">
-                        <input type="button"  value="Book Ticket" class="button_ticket">
-                    </div>
-                </div>
-        </nav>
-    </body>
-
-</html>
+                    
+                    <table class="user_info" id="user_button">
+                        <tr>
+                         <td>
+                             <form action="http://127.0.0.1:5501/templates/userdashboard.html" method="post">
+                                 <script
+                                   src="https://checkout.stripe.com/checkout.js"
+                                   class="stripe-button"
+                                   data-key="pk_test_51MFZYYH7bQegTcniM66JxzWD6urqexKuHxZJSU2gNwvvYSVPiRmKJilGYmgzd1RE4R2WZ6swrneSmrNQqxgfPX6y00p3c6q36i"
+                                   data-name="Make Payment"
+                                   data-description="For Online Booking"
+                                   data-amount="2000"
+                                   data-currency="eur"
+                                   data-label="Book Now">
+                                 </script>
+                               </form>
+                         </td>
+                        
+                       
+                     </div>
+                 </table>
+         </nav>
+     </body>
+ 
+ </html>

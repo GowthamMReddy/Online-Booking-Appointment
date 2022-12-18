@@ -43,7 +43,7 @@ body header .nav .nav-link
 body .main
 {
     height:92.7vh;
-    background-image: linear-gradient(to right,rgba(0,0,0,0),rgba(0,0,0,0.9)),url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF3ewxUfpYy6ma4fT_bmcsYHEN0KfL9Mg6YA&usqp=CAU");
+    background-image: linear-gradient(to right,rgba(0,0,0,0),rgba(0,0,0,0.9)),url(/templates/Images/Appointment.jpg);
     width: 100%;
     background-color: black;
     background-repeat: no-repeat;
