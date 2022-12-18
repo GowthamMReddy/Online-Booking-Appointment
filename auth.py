@@ -67,7 +67,7 @@ def login_db():
     if isAvailable == False:
         return 'password is wrong'
 
-app.route('/userdashboard_db', methods= ['POST','GET'])
+@app.route('/userdashboard_db', methods= ['POST','GET'])
 def userdashboard_db():
     User_Name = request.form['user_name']
     Age = request.form['age']
