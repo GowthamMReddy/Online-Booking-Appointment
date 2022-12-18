@@ -60,7 +60,7 @@ def login_db():
             isAvailable = True
             return render_template('userdashboard.html')
     if isAvailable == False:
-        return 'strinr'
+        return 'password is wrong'
 
 @app.route('/spin')
 def spin():
