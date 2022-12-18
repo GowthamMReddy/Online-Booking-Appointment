@@ -30,7 +30,7 @@ body
 
 .nav_dashboard{
     width: 100%;
-    height: 10rem;
+    height: 80px;
     background-color:burlywood;;
     display :flex;
     align-items: center;
@@ -75,7 +75,6 @@ background-color: white;
 .close
 {
     display: inline-block;
-    position:absolute;
     top:1rem;
     left:75rem;
     font-size:4rem;
@@ -98,50 +97,67 @@ background-color: white;
     display: block;
     box-sizing: border-box;
     text-align: center;
-    margin: 14rem;
-    padding: 5rem;
+    margin: 50px;
+    padding: 50px;
     height: 50%;
     background: rgba(222,184,135,0.8);
     border-color: black;
     border-radius: 10rem;
-    border-width: 0.5px;
-
+    border-width: 5px;
 }
 .User_section{
     display:block;
-    padding: 3rem;
-    font-size: 100%;
+    padding: 2px;
+    font-size: 15px;
     font-weight: 500;
     align-items:center;
 }
-
 .User_section .user_info{
-    padding-left: 32rem;
-    width: 50%;
+    padding-left: 300px;
+    width: 70%;
     height: 50%;
     font: bold;
-    font-size:2rem;
     font-weight: 600;
     margin-left: 0px;
     text-align: left;
-    margin-bottom: 1.5rem;
-    margin-left: 1rem;
 }
-#user-name
-{   
-    height:3rem;
 
+.User_section .user_info input{
+    width: 200px;
+    height: 25px;
 }
+
+.User_section .user_info select{
+    width: 200px;
+    height: 25px;
+}
+
+.User_section .user_info .booking_btn{
+    height: 30px;
+    width: 198px;
+    font-weight: bold;
+    color: white;
+    background-color:dodgerblue;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
 
 .button_ticket{
     display:inline-flex;
     align-content:space-between;
-    padding: 0.5rem;
-    cursor:pointer;
+    padding: 5px;
+    cursor: pointer;
     background-color: rgb(243, 180, 102);
 }
-
 .button_ticket :hover{
     transform: translateY(-5px);
-    
+}
+
+#user-name
+{   
+    height:3rem;
+
 }
