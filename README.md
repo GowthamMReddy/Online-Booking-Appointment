@@ -61,6 +61,26 @@ Gowtham (10624812) :
 Designed the UserDashboard page using HTML and CSS and added the fields 'User Name', 'Age', 'Appointment_for', 'Lawyer_Name', 'Lawyer_Address', 'lawyer_contact'.
 Using CSS3 provided styling to the webpage and made fields visible with proper visibility. linked above field to python using the python flask framework.
 Used Render-template to render the template and run on the server. Added images to the webpage, connected to the oracle DB and storing the data into Oracle DB.
-Tested application end to end and verified data in database also helped other group members to complete the task and resolve the issues.
+Tested application end to end and verified data in database also helped other group members to complete the task and resolve the 
 
+Rashmee (10632656) :
 
+Initiated with the project requirements and segregated the 
+Implementation of the Flask framework with installation of pre-requisites for Python, PIP, Flask, Flask-login
+Taken the ownership to handle all the commits and merges for the entire group and have stable code in main branch.
+Tested the code and added exception handling for Database connectivity for oracle
+worked on CSS file for index page
+Learned and Implemented the API Integration for Payment checkout using Stripe with pubic keys
+Designed the layout of the payment gateway modal on user dashboard page
+Contributed in CSS changes for user dashboard css page.
+Added JavaScript code in userdashboard html page.
+
+Contributed and learned the API’s and it’s integration for payment gateway.
+Stripe API’s configuration and setup was done which is added in user dashboard html file. 
+Checkout process of a payment for booking is added. 
+Contributed in web page development.
+Updated the userdashboard page with the payment button and integrated with stripe API and made configuration in the Stripe API to get the Payment gateway . authenticated the payment gateway and added the validations to the fields in the Payment gateway. Fixed issues while developing the application.
+Worked with html, css, javascript, python
+ Created requirements file to create the scenarios for testing and development of the web application.
+Managed and contributed in devOps tool git for this project with separate branches for all and merge the code into main as to track down the latest code changes.
+Helped team members  to clone the project in different machines while working on a group project and helped in using git commands. 
