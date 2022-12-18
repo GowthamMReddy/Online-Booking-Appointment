@@ -21,7 +21,8 @@ Oracle
 Stripe payment gateway API
 
 ---------------------------E-Booking is a front-end---------------
-implementation of buying tickets online via payment checkout and book an appointment.
+
+Implementation of buying tickets online via payment checkout and book an appointment.
 
 Once user has ticket he can see the boking details and have an option to update and delete his booking. 
 
