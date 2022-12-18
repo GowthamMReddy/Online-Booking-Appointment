@@ -17,7 +17,7 @@ def register_db():
     Phone = request.form['phone']
     Password = request.form["password"]
     path = 'system/sys@//localhost:1521/xe'
-    cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7-20221215T235126Z-001\instantclient_21_7")
+    cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7")
     connection = cx_Oracle.connect(path) 
     cursor = connection.cursor()
     try:
@@ -38,6 +38,9 @@ def register_db():
     else:
         return "you have already register"
 
+@app.route('/login')
+def login():
+    return render_template('login.html')
        
    
 
@@ -46,7 +49,7 @@ def login_db():
     Login_Email = request.form["login_email"]
     Login_Password = request.form["login_password"]
     path = 'system/sys@//localhost:1521/xe'
-    cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7-20221215T235126Z-001\instantclient_21_7")
+    cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7")
     connection = cx_Oracle.connect(path) 
     cursor = connection.cursor()
     try:
@@ -77,7 +80,7 @@ def userdashboard_db():
     LawyerAddr=request.form['lawyer_addr']
     LawyerConatct=request.form['lawyer_contact']
     path = 'system/sys@//localhost:1521/xe'
-    cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7-20221215T235126Z-001\instantclient_21_7")
+    cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7")
     connection = cx_Oracle.connect(path) 
     cursor = connection.cursor('userdashboard.html')
     try:
@@ -102,7 +105,7 @@ def userdashboard_db():
 def user_profile():
 
         path = 'system/sys@//localhost:1521/xe'
-        cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7-20221215T235126Z-001\instantclient_21_7")
+        cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7")
         connection = cx_Oracle.connect(path) 
         cursor = connection.cursor()
         cursor.execute("""select FIRST_NAME from Register """)
