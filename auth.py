@@ -30,6 +30,7 @@ def register_db():
     if isAvailable == False :
         cursor.execute("""insert into Register values(:firstname, :lastname, :email, :phone, :password)""",firstname = First_Name,lastname = LastName, email = Email, phone = Phone, password = Password )
         connection.commit()
+        
         return render_template('Index.html')
     else:
         return "you have alreay register"
