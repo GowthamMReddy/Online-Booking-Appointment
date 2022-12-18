@@ -1,0 +1,79 @@
+*,*::after,*::before
+{
+  margin:0;
+  padding:0;
+  box-sizing: inherit;
+
+
+}
+html{
+
+
+    font-size: 62.5%;
+
+    box-sizing: border-box;
+}
+
+body{
+
+ background-color: black;
+ position: relative;
+ margin:0;
+
+
+}
+
+body .login
+{
+width:80rem;
+height: 75rem;
+background-color: white;
+position:absolute;
+ top:50%;
+ left:50%;
+transform: translate(-50%, -50%);
+text-align: center;
+padding: 5rem;
+border-radius:4rem;
+
+
+
+
+
+}
+
+body .login .close-login
+{
+
+    color:black;
+    position:absolute;
+    left:73rem;
+    top:2rem;
+    text-decoration: none;
+    font-size:3rem;
+
+}
+body .login .login-form .to-login
+{
+
+    margin-top: 5rem;
+}
+
+body .login .login-form  .input-fields
+{
+
+        width:80%;
+        height:8rem;
+        margin-top: 5rem;
+        margin-bottom:2rem;
+        border-radius: 1.5rem;
+        border:0;
+        border-bottom:0.2rem solid black ;
+}
+body .login .login-form .submit:hover
+{
+
+        cursor:pointer;
+        background-color: skyblue;
+
+}
