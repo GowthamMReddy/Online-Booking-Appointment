@@ -108,6 +108,57 @@ def userdashboard_db():
 @app.route('/payment', methods=['POST','GET'])
 def payment():
     return render_template('booking.html')
+
+# code to fetch the data
+def getConnect():
+    connection = cx_Oracle.connect("system/sys@localhost:1521/xe")
+    return connection
+
+def fetchData():
+    connection = getConnect()
+    cursor = connection.cursor()
+    sql_fetch_data = "select * from Booking_App1"
+    cur=cursor.execute(sql_fetch_data)
+    
+    res = ""
+    strList = []
+    for result in cursor:
+        strList.append(result)
+    connection.commit()
+    cursor.close()
+    connection.close()
+    return strList  
+
+class bookingdetails:
+    def __init__(self, username, age, lawyername, lawyeraddress, lawyercontact):
+        self.username = username
+        self.age = age
+        self.lawyername = lawyername
+        self.lawyeraddress= lawyeraddress
+        self.lawyercontact= lawyercontact
+
+def listTobooking(l):  # it returns a list of emp objects
+    bookinglist = []
+    for records in l:
+        a, b, c, d, e = records
+        p= bookingdetails( a, b, c, d, e)
+        bookinglist.append(p)
+    return bookinglist
+
+@app.route("/booking", methods=['GET', 'POST'])
+def UserBooking():
+    if request.method == 'POST':
+        name = 'test'
+        title = request.form['age']
+        dept = request.form['lawyername']
+        sal = request.form['lawyeraddr']
+        sal = request.form['lawyercontact']
+        return redirect("/")
+    db_res = fetchData()
+    passtowebpage = listTobooking(db_res)
+    return render_template('booking.html', emplist=passtowebpage)
+
+
     
        
 if __name__ == '__main__':
