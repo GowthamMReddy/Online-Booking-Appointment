@@ -38,6 +38,13 @@ def register_db():
         return "you have already register"
 
 
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+       
+   
+
 @app.route('/login')
 def login():
     return render_template('login.html')
