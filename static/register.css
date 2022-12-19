@@ -42,8 +42,8 @@ body header .nav .nav-link
 }
 body .main
 {
-    height:92.7vh;
-    background-image: linear-gradient(to right,rgba(0,0,0,0),rgba(0,0,0,0.9)),url(/templates/Images/Appointment.jpg);
+    height:100%;
+    background-image: linear-gradient(to right,rgba(0,0,0,0),rgba(0,0,0,0.9)),url(/static/Images/Justice.jpg);
     width: 100%;
     background-color: black;
     background-repeat: no-repeat;
