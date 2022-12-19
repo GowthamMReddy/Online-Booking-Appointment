@@ -16,7 +16,7 @@ def register_db():
     Phone = request.form['phone']
     Password = request.form["password"]
     path = 'system/sys@//localhost:1521/xe'
-    cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7-20221215T235126Z-001\instantclient_21_7")
+    cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7")
     connection = cx_Oracle.connect(path) 
     cursor = connection.cursor()
     try:
@@ -36,6 +36,12 @@ def register_db():
         return render_template('Index.html')
     else:
         return "you have already register"
+
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+       
    
 
 @app.route('/login_db',methods = ['POST','GET'])
@@ -65,6 +71,10 @@ def login_db():
     if isAvailable == False:
         return 'password is wrong'
 
+@app.route('/userdash', methods=['POST','GET'])
+def userdash():
+    return render_template('userdashboard.html')
+
 @app.route('/userdashboard_db', methods= ['POST','GET'])
 def userdashboard_db():
     User_Name = request.form['user_name']
@@ -73,6 +83,7 @@ def userdashboard_db():
     LawyerAddr=request.form['lawyer_addr']
     LawyerContact=request.form['lawyer_contact']
     path = 'system/sys@//localhost:1521/xe'
+
     client_path=True
     if client_path==False:
         client_path=cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7-20221215T235126Z-001\instantclient_21_7")
@@ -92,10 +103,17 @@ def userdashboard_db():
 
     isAvailable=True
     connection.commit()
-    return render_template('Index.html')
-        
+    return render_template('userdashboard.html')
+    path = 'system/sys@//localhost:1521/xe'
+    cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7")
+    connection = cx_Oracle.connect(path) 
+    cursor = connection.cursor()
+    cursor.execute("""select FIRST_NAME from Register """)
+
     if isAvailable==False:
         return 'Time slot is booked for Appointment, please select other time'
+    
+    
 
 
     
