@@ -16,12 +16,11 @@ def register_db():
     Phone = request.form['phone']
     Password = request.form["password"]
     path = 'system/sys@//localhost:1521/xe'
-    cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7")
+    cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7-20221215T235126Z-001\instantclient_21_7")
     connection = cx_Oracle.connect(path) 
     cursor = connection.cursor()
     try:
         cursor.execute("create table Register (first_name varchar(50),last_name varchar(50),email_id varchar(100),phone number(10),password varchar(10))")
-    
     except:
         print("table present")
     cursor.execute("""select FIRST_NAME,EMAIL_ID from Register where FIRST_NAME = :first_name and EMAIL_ID = :email""",first_name = First_Name, email = Email )
@@ -41,14 +40,7 @@ def register_db():
 
 @app.route('/login')
 def login():
-    return render_template('login.html')
-       
-   
-
-@app.route('/login')
-def login():
-    return render_template('login.html')
-       
+    return render_template('login.html')      
    
 
 @app.route('/login_db',methods = ['POST','GET'])
@@ -111,18 +103,7 @@ def userdashboard_db():
     isAvailable=True
     connection.commit()
     return render_template('userdashboard.html')
-    path = 'system/sys@//localhost:1521/xe'
-    cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7")
-    connection = cx_Oracle.connect(path) 
-    cursor = connection.cursor()
-    cursor.execute("""select FIRST_NAME from Register """)
-
-    if isAvailable==False:
-        return 'Time slot is booked for Appointment, please select other time'
     
-    
-
-
     
        
 if __name__ == '__main__':
