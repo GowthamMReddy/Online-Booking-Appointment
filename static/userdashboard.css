@@ -134,6 +134,7 @@ background-color: white;
 
 .User_section .user_info .booking_btn{
     height: 30px;
+    margin-left: 120px;
     width: 198px;
     font-weight: bold;
     color: white;

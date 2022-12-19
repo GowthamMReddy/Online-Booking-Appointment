@@ -56,8 +56,8 @@ body .main .register
     visibility: hidden;
     position: absolute;
     left:0;
-    top:0;
-    height: 100vh;
+    margin-top: 200px;
+    height: 10px;
     width: 100%;
     background-color: rgba(0,0,0,0.8);
 }
@@ -69,11 +69,11 @@ body .main .register:target
 }
 body .main .register .register-form
 {   
-    height:80rem;
-    width:90rem;
+    height:60rem;
+    width:50rem;
     background-color: white;
     position: absolute;
-    top:50%;
+    margin-top:120px;
     left:50%;
     transform:  translate(-50%, -50%);
     border-radius: 5rem;
@@ -84,7 +84,7 @@ body .main .register .register-form .close
 {
     
     position:absolute;
-    left:84rem;
+    left:45rem;
     top:2rem;
     text-decoration: none;
     font-size:3rem;
@@ -101,8 +101,8 @@ body .main .register .register-form .to-register
 body .main .register .register-form  .input-fields
 {
 
-        width:80%;
-        height:8rem;
+        width:50%;
+        height:50px;
         margin-bottom:2rem;
         border-radius: 1.5rem;
         border:0;
