@@ -61,6 +61,9 @@ Gowtham (10624812) :
 
 Took initiative and led the team, gathered all the requirements and explained it to the team and contributed the major part of the project. Researched about Python flask framework and how it integrates with templates and db. Installed pre-defined libraries used for developing the application. Organised the folder structure as per the standards. Designed the UserDashboard page using HTML and CSS and added the fields 'User Name', 'Age', 'Appointment_for', 'Lawyer_Name', 'Lawyer_Address', 'lawyer_contact'. Using CSS3 provided styling to the webpage and made fields visible with proper visibility. linked above field to python using the python flask framework. Used Render-template to render the template and run on the server. Designed payments page and booking confirmation page using HTML and CSS. Corrected all CSS changes for the login and register pages. Created bookings table and stored user booking details using Oracle db configuration, on click of booking confirmation and made changes to redirect control from userdashboard page to payments page and then to booking confirmation page. Added background images to all the pages throughtout the application. Drafted sql query to fetch the data from the Oracle db and display on the UI. Tested application end to end and verified data in database. Also helped other group members to complete the taskS and resolve the bugs. Handled all the git conflicts and managed the merges. Resoled major issue while connecting to the Oracle db by setting the flag and maintaining the code. Maintained and performed the code review throughout the project.
 
+
+likhith (10614739): Created user register page and user login page using the HTML and provided styling using the CSS3 technology. Established the connection between oracle db and python and created the register table  and storing the user data in database. created login table and integrated with login page to store the user login data in db. made use of python flask frame work to integrate the register page and login page with DB . wrote python code for business logic to verify user registration/ login details.Written code to capture the  user data from register page and login page using request form methods. 
+
 Rashmee (10632656) :
 
 Initiated with the project requirements and segregated the 
@@ -85,7 +88,9 @@ Helped team members  to clone the project in different machines while working on
 
 
 
+
 Venkat(10625132) :
  Understood application and created business requirements. Updated the user dashboard page with the user profile button. made changes in HTML page and CSS page. helped group members with DB configuration and designing the webpage, fixed defects while debugging the application. Performed testing on application to make sure everything is working as expected.
 I used Hypertext Markup Language (HTML5) to create a spinning wheel page and using CSS3, like as colour, font size, and more, I'm adding styling for creating that html page and also write a code for java script for spinning the wheel and also I'm integrating with pyhton flask. It is standard alone application. In that HTML page was integrating flask. After that I’m creating alert message using HTML page for that styling purpose, I’m using CSS and then I"m integrate with pyhton flak with this code. I’m helping with groups members for checking the code and test the code entire code. Working together for login and signup pages by using html pages and css.
+
 
