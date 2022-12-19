@@ -16,7 +16,9 @@ def register_db():
     Phone = request.form['phone']
     Password = request.form["password"]
     path = 'system/sys@//localhost:1521/xe'
-    client_path=cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7-20221215T235126Z-001\instantclient_21_7")
+    client_path=True
+    if client_path==False:
+        client_path=cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7-20221215T235126Z-001\instantclient_21_7")
     connection = cx_Oracle.connect(path) 
     cursor = connection.cursor()
     try:
@@ -55,7 +57,7 @@ def login_db():
     connection = cx_Oracle.connect(path) 
     cursor = connection.cursor()
     try:
-        cursor.execute("create table Login(email_id varchar(100),password_ varchar(10),date_time varchar2(100))")
+         cursor.execute("create table Login(email_id varchar(100),password_ varchar(10),date_time varchar2(100))")
     except:
         print("table present")
     connection.commit()
@@ -109,54 +111,20 @@ def userdashboard_db():
 def payment():
     return render_template('booking.html')
 
-# code to fetch the data
-def getConnect():
-    connection = cx_Oracle.connect("system/sys@localhost:1521/xe")
-    return connection
-
-def fetchData():
-    connection = getConnect()
-    cursor = connection.cursor()
-    sql_fetch_data = "select * from Booking_App1"
-    cur=cursor.execute(sql_fetch_data)
-    
-    res = ""
-    strList = []
-    for result in cursor:
-        strList.append(result)
-    connection.commit()
-    cursor.close()
-    connection.close()
-    return strList  
-
-class bookingdetails:
-    def __init__(self, username, age, lawyername, lawyeraddress, lawyercontact):
-        self.username = username
-        self.age = age
-        self.lawyername = lawyername
-        self.lawyeraddress= lawyeraddress
-        self.lawyercontact= lawyercontact
-
-def listTobooking(l):  # it returns a list of emp objects
-    bookinglist = []
-    for records in l:
-        a, b, c, d, e = records
-        p= bookingdetails( a, b, c, d, e)
-        bookinglist.append(p)
-    return bookinglist
-
-@app.route("/booking", methods=['GET', 'POST'])
-def UserBooking():
-    if request.method == 'POST':
-        name = 'test'
-        title = request.form['age']
-        dept = request.form['lawyername']
-        sal = request.form['lawyeraddr']
-        sal = request.form['lawyercontact']
-        return redirect("/")
-    db_res = fetchData()
-    passtowebpage = listTobooking(db_res)
-    return render_template('booking.html', emplist=passtowebpage)
+@app.route("/cancelbooking", methods=['GET','POST'])
+def cancelbooking():
+     connection = cx_Oracle.connect("system/sys@localhost:1521/xe")
+     cursor = connection.cursor()
+     query= 'delete from Booking_App1 where AGE = Age'
+     cursor.execute(query)
+     try:
+        with cx_Oracle.connect("system/sys@localhost:1521/xe") as connection:
+            with connection.cursor() as cursor :
+                cursor.execute(query)
+                # commit the change
+                connection.commit()
+     except cx_Oracle.Error as error:
+        print(error)
 
 
     
