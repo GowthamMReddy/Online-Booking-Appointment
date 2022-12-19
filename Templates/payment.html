@@ -1,0 +1,41 @@
+
+<html>
+
+
+<head>
+
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='payment.css')}}" >
+<link rel="stylesheet" type="text/css" href="F:\new pull\Online-Booking-Appointment\static\payment.css" >
+
+
+</head>
+<body>
+<div class="nav_dashboard">
+
+        <h2>Payment Portal</h2>
+</div>
+
+<div class="user_bttn">
+    <form action="/payment" method="post">
+        <table class="user_info" id="user_button">
+            <tr>
+             <td>
+                     <script
+                       src="https://checkout.stripe.com/checkout.js"
+                       class="stripe-button"
+                       data-key="pk_test_51MFZYYH7bQegTcniM66JxzWD6urqexKuHxZJSU2gNwvvYSVPiRmKJilGYmgzd1RE4R2WZ6swrneSmrNQqxgfPX6y00p3c6q36i",
+                       data-name="Make Payment",
+                       data-description="For Online Booking",
+                       data-amount="2000",
+                       data-currency="eur",
+                       data-label="Pay to Book Appointment",
+                       mode="payment",
+                       cancel_url='http://127.0.0.1:5000/payment',>
+                     </script>
+             </td>
+     </table>
+    </form>
+     </div>
+</body>
+
+</html>

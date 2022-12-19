@@ -16,13 +16,14 @@ def register_db():
     Phone = request.form['phone']
     Password = request.form["password"]
     path = 'system/sys@//localhost:1521/xe'
-    cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7-20221215T235126Z-001\instantclient_21_7")
+    client_path=cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7-20221215T235126Z-001\instantclient_21_7")
     connection = cx_Oracle.connect(path) 
     cursor = connection.cursor()
     try:
         cursor.execute("create table Register (first_name varchar(50),last_name varchar(50),email_id varchar(100),phone number(10),password varchar(10))")
     except:
         print("table present")
+    connection.commit()
     cursor.execute("""select FIRST_NAME,EMAIL_ID from Register where FIRST_NAME = :first_name and EMAIL_ID = :email""",first_name = First_Name, email = Email )
     isAvailable = False
     for i in cursor.fetchmany():
@@ -48,14 +49,15 @@ def login_db():
     Login_Email = request.form["login_email"]
     Login_Password = request.form["login_password"]
     path = 'system/sys@//localhost:1521/xe'
-    client_path=cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7-20221215T235126Z-001\instantclient_21_7")
+    client_path=True
+    if client_path==False:
+        client_path=cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7-20221215T235126Z-001\instantclient_21_7")
     connection = cx_Oracle.connect(path) 
     cursor = connection.cursor()
     try:
-        cursor.execute("create table Login (email_id varchar(100),password_ varchar(10),date_time varchar2(100))")
+        cursor.execute("create table Login(email_id varchar(100),password_ varchar(10),date_time varchar2(100))")
     except:
         print("table present")
-
     connection.commit()
     cursor.execute("""select EMAIL_ID,PASSWORD from Register where  EMAIL_ID = :email and PASSWORD = :password """,email = Login_Email, password = Login_Password ) 
     isAvailable = False
@@ -70,9 +72,7 @@ def login_db():
     if isAvailable == False:
         return 'password is wrong'
 
-@app.route('/userdash', methods=['POST','GET'])
-def userdash():
-    return render_template('userdashboard.html')
+
 
 @app.route('/userdashboard_db', methods= ['POST','GET'])
 def userdashboard_db():
@@ -102,8 +102,12 @@ def userdashboard_db():
 
     isAvailable=True
     connection.commit()
-    return render_template('userdashboard.html')
+    return render_template('payment.html')
     
+
+@app.route('/payment', methods=['POST','GET'])
+def payment():
+    return render_template('booking.html')
     
        
 if __name__ == '__main__':
