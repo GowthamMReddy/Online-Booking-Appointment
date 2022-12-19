@@ -2,7 +2,6 @@
 <html>
     <head>
         <link rel="stylesheet" href="{{url_for('static', filename='userdashboard.css')}}" >
-        <link rel="stylesheet" href="D:\DBS\New folder\static\userdashboard.css" >
 
         <title>UserDashboard</title>
     </head>
@@ -10,7 +9,7 @@
     <body>
         <div class="nav_dashboard">
 
-            <a href="#" class = "user_log margin">Online Booking</a>
+            <a href="#" class = "user_log margin">Lawyer Appointment Booking</a>
 
             <div class="user_update">
 
@@ -26,41 +25,45 @@
             
             
         </div>
+       
         <nav class="UserDashboard">
+            <form action="http://127.0.0.1:5000/userdashboard_db" method="post" class="userdashboard-form">
                 <div class="User_section">
                     <div class="user_info">User Name :
-                        <input type="text" value="" id="user-name">
+                        <input type="text" name="user_name" id="user-name">
                     </div><br>
                     <div class="user_info">Age :
-                        <input type="number" value="0" min="18" max="60" id="age">
+                        <input type="number"  name="age" min="18" max="60" id="age">
                     </div><br>
                     <div class="user_info">Date & Time :
                         <input type="datetime-local" value="" id="date_time" >
                     </div><br>
-                    <div class="user_info">Appointment for :
-                        <select>
-                            <option>{{value1}}</option>
-                            <option>{{value2}}</option>
-                            <option>{{value3}}</option>
-                            <option>{{value4}}</option>
+                    <div class="user_info" id="appointment">Appointment for :
+                        <select name="user_appointment">
+                            <option>Crime Issues</option>
+                            <option>Property litigation</option>
+                            <option>Martial Issues</option>
+                            <option>Aggreement & Notary</option>
                         </select>
                     </div><br>
                     <div class="user_info">Lawyer Name :
-                        <input type="text" value={{lawyerName}} id="lawyer-name">
+                        <input type="text" value="Stephen" name="lawyer_name" id="lawyer-name">
                     </div><br>
-                    <div class="user_info">Lawer Address :
-                        <input type="text" value="{{lawyerAddrs}}" id="lawyer-adds">
+                    <div class="user_info">Lawyer Address :
+                        <input type="text" value="headford"  name="lawyer_addr" id="lawyer-adds">
                     </div><br>
-                    <div class="user_info">Lawer Contact :
-                        <input type="text" value="{{lawyerContact}}" id="lawyer-contact">
+                    <div class="user_info">Lawyer Contact :
+                        <input type="number" value="353888888" name="lawyer_contact" id="lawyer-contact">
                     </div><br>
-                    <div class="user_info" id="booking_btn"> 
-                        <input type="button" value="Complete Booking">
+                    <div class="user_info"> 
+                        <input type="submit" value="Complete Booking" class="booking_btn">
                     </div>
+                </form>
+                    <div class="user_bttn">
+                <form action="#" method="post">
                     <table class="user_info" id="user_button">
                         <tr>
                          <td>
-                             <form action="http://127.0.0.1:5501/templates/userdashboard.html" method="post">
                                  <script
                                    src="https://checkout.stripe.com/checkout.js"
                                    class="stripe-button"
@@ -71,13 +74,13 @@
                                    data-currency="eur"
                                    data-label="Pay to Book Appointment">
                                  </script>
-                               </form>
                          </td>
-                        
-                       
-                     </div>
                  </table>
+                </form>
+                 </div>
+                   
          </nav>
+    
      </body>
  
  </html>
