@@ -36,8 +36,6 @@ def register_db():
         return render_template('Index.html')
     else:
         return "you have already register"
-
-       
    
 
 @app.route('/login_db',methods = ['POST','GET'])
@@ -45,7 +43,7 @@ def login_db():
     Login_Email = request.form["login_email"]
     Login_Password = request.form["login_password"]
     path = 'system/sys@//localhost:1521/xe'
-    cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7-20221215T235126Z-001\instantclient_21_7")
+    client_path=cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7-20221215T235126Z-001\instantclient_21_7")
     connection = cx_Oracle.connect(path) 
     cursor = connection.cursor()
     try:
@@ -71,43 +69,35 @@ def login_db():
 def userdashboard_db():
     User_Name = request.form['user_name']
     Age = request.form['age']
-    Appointment= request.form['user_appointment']
     LawyerName=request.form['lawyer_name']
     LawyerAddr=request.form['lawyer_addr']
-    LawyerConatct=request.form['lawyer_contact']
+    LawyerContact=request.form['lawyer_contact']
     path = 'system/sys@//localhost:1521/xe'
-    cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7-20221215T235126Z-001\instantclient_21_7")
+    client_path=True
+    if client_path==False:
+        client_path=cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7-20221215T235126Z-001\instantclient_21_7")
     connection = cx_Oracle.connect(path) 
     cursor = connection.cursor()
     try:
-        cursor.execute("create table bookings (user_name varchar(20),age number(10),user_appointment varchar(50),lawyer_name varchar(10),lawyer_addr varchar(100), lawyer_contact(10)")
+        cursor.execute("create table Booking_App1 (user_name varchar(20),age number(10),lawyer_name varchar(10),lawyer_addr varchar(100), lawyer_contact(10)")
     
     except:
-        return("table present")
+        print("table present")
 
-    cursor.execute("""select USER_NAME from bookings where USER_NAME = :user_name""",user_name = User_Name )
+    connection.commit()
+    cursor.execute("""select user_name, age from Booking_App1 where user_name = :user_name and age= :age""",user_name = User_Name, age= Age )
     isAvailable = False
-    for i in cursor.fetchmany():
-        if i[0] == User_Name:
-            isAvailable = True
-    if isAvailable == False :
-        cursor.execute("""insert into bookings values(:username, :age, :user_appointment, :lawyer-name, :lawyer-addr, :lawyer-contact)""",user_name = User_Name, age=Age, user_appointment=Appointment, lawyer_name=LawyerName, lawyer_addr=LawyerAddr, lawyer_contact=LawyerConatct  )
-        connection.commit()
-        return render_template('Index.html')
-    else:
-        return 'Time slot is booked for lottery ticket, please select other time'
-
-@app.route("/user_profile", methods = ['POST', 'GET'])
-def user_profile():
-
-        path = 'system/sys@//localhost:1521/xe'
-        cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7-20221215T235126Z-001\instantclient_21_7")
-        connection = cx_Oracle.connect(path) 
-        cursor = connection.cursor()
-        cursor.execute("""select FIRST_NAME from Register """)
-        
-        return render_template("user_profile.html")
     
+    cursor.execute("""insert into Booking_App1 values(:username, :age, :lawyername, :lawyeraddr, :lawyercontact)""",username = User_Name, age=Age,lawyername =LawyerName, lawyeraddr=LawyerAddr, lawyercontact=LawyerContact)
+
+    isAvailable=True
+    connection.commit()
+    return render_template('Index.html')
+        
+    if isAvailable==False:
+        return 'Time slot is booked for Appointment, please select other time'
+
+
     
        
 if __name__ == '__main__':
