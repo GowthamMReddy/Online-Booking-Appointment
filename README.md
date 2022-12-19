@@ -58,10 +58,8 @@ Implement online appointment booking platform
 -------------Individual Contribution------------------------
 
 Gowtham (10624812) :
-Designed the UserDashboard page using HTML and CSS and added the fields 'User Name', 'Age', 'Appointment_for', 'Lawyer_Name', 'Lawyer_Address', 'lawyer_contact'.
-Using CSS3 provided styling to the webpage and made fields visible with proper visibility. linked above field to python using the python flask framework.
-Used Render-template to render the template and run on the server. Added images to the webpage, connected to the oracle DB and storing the data into Oracle DB.
-Tested application end to end and verified data in database also helped other group members to complete the task and resolve the 
+
+Took initiative and led the team, gathered all the requirements and explained it to the team and contributed the major part of the project. Researched about Python flask framework and how it integrates with templates and db. Installed pre-defined libraries used for developing the application. Organised the folder structure as per the standards. Designed the UserDashboard page using HTML and CSS and added the fields 'User Name', 'Age', 'Appointment_for', 'Lawyer_Name', 'Lawyer_Address', 'lawyer_contact'. Using CSS3 provided styling to the webpage and made fields visible with proper visibility. linked above field to python using the python flask framework. Used Render-template to render the template and run on the server. Designed payments page and booking confirmation page using HTML and CSS. Corrected all CSS changes for the login and register pages. Created bookings table and stored user booking details using Oracle db configuration, on click of booking confirmation and made changes to redirect control from userdashboard page to payments page and then to booking confirmation page. Added background images to all the pages throughtout the application. Drafted sql query to fetch the data from the Oracle db and display on the UI. Tested application end to end and verified data in database. Also helped other group members to complete the taskS and resolve the bugs. Handled all the git conflicts and managed the merges. Resoled major issue while connecting to the Oracle db by setting the flag and maintaining the code. Maintained and performed the code review throughout the project.
 
 Rashmee (10632656) :
 
