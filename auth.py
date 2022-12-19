@@ -38,6 +38,13 @@ def register_db():
         return "you have already register"
 
 
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+       
+   
+
 @app.route('/login')
 def login():
     return render_template('login.html')
@@ -71,6 +78,10 @@ def login_db():
     if isAvailable == False:
         return 'password is wrong'
 
+@app.route('/userdash', methods=['POST','GET'])
+def userdash():
+    return render_template('userdashboard.html')
+
 @app.route('/userdashboard_db', methods= ['POST','GET'])
 def userdashboard_db():
     User_Name = request.form['user_name']
@@ -99,15 +110,17 @@ def userdashboard_db():
 
     isAvailable=True
     connection.commit()
-    return render_template('Index.html')
-        path = 'system/sys@//localhost:1521/xe'
-        cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7")
-        connection = cx_Oracle.connect(path) 
-        cursor = connection.cursor()
-        cursor.execute("""select FIRST_NAME from Register """)
+    return render_template('userdashboard.html')
+    path = 'system/sys@//localhost:1521/xe'
+    cx_Oracle.init_oracle_client(lib_dir=r"C:\oraclexe\app\oracle\instantclient_21_7")
+    connection = cx_Oracle.connect(path) 
+    cursor = connection.cursor()
+    cursor.execute("""select FIRST_NAME from Register """)
 
     if isAvailable==False:
         return 'Time slot is booked for Appointment, please select other time'
+    
+    
 
 
     
