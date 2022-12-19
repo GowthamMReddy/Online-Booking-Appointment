@@ -64,3 +64,6 @@ Used Render-template to render the template and run on the server. Added images 
 Tested application end to end and verified data in database also helped other group members to complete the task and resolve the issues.
 
 
+
+likith: Created user register page and user login page using the HTML and provided styling using the CSS3 technology. Established the connection between oracle db and python and created the register table  and storing the user data in database. created login table and integrated with login page to store the user login data in db. made use of python flask frame work to integrate the register page and login page with DB . wrote python code for business logic to verify user registration/ login details.Written code to capture the  user data from register page and login page using request form methods. 
+
