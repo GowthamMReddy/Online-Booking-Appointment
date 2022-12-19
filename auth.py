@@ -115,16 +115,16 @@ def userdashboard_db():
              use1 = user[1]
              print(use1)
         
-             use = use +" "+ use1
+             use = use +","+ use1
              print(use)
         return redirect(url_for("use", usr=use))
     
 
 @app.route("/<usr>")
 def use(usr):
-    return f"""<h1 style="margin-top:5rem;color:blue;text-align:center">{usr}</h1>
+    return f"""<body style="background-color:black"><div style="border-style: solid;border-color:burlywood;border-width: 5px; border-height:10px;border-radius: 5px"><div style="color:white;margin-top:8rem;font-size=100px;text-align:center">UserName,&nbsp;Age</div><h2 style="margin-top:1rem;color:white;text-align:center">{usr}</h2>
      <form action="http://127.0.0.1:5000/transaction" method="post" class="bookingcancel-form">
-<center><button style="color:blue;text-align:center">submit</button> </center></form>"""
+<center><button style="color:blue;text-align:center">Proceed with Payment</button> </center></form></div></div></body>"""
 
 @app.route('/transaction', methods=['POST','GET'] )
 def transaction():
