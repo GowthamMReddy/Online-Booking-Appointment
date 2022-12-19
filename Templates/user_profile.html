@@ -1,16 +1,42 @@
-{% extends "userdashboard.html" %}
-{% block title %} User Profile {% endblock %}
-
-{% block content %}
+<html>
 
 
+<head>
 
-    <h1>Fisrt Name:  </h1><input type="submit" value = "Edit" name="first_name">
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='user_profile.css')}}" >
+<link rel="stylesheet" type="text/css" href="F:\new pull\Online-Booking-Appointment\static\user_profile.css" >
+
+</head>
+
+<body>
+
+    <div class="login"  id="open-login">
+
+        <form action="http://127.0.0.1:5000/login_db" method="post" class="login-form">
+    
+            
+            <h1 class="user">User Details</h1>
+            <p class="details">First Name :</p>
+            <p class="details">Last Name:</p>
+            <p class="details">Email ID:</p>
+            <p class="details">Phone:</p>
+            
+    
+    
+    
+        </form>
+        
+        
+
+
+
+    </div>
+
+</body>
+
+</html>
 
 
 
 
 
-
-
-{% endblock %}
