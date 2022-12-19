@@ -123,8 +123,9 @@ def cancelbooking():
                 cursor.execute(query)
                 # commit the change
                 connection.commit()
+                return render_template('userdashboard.html')
      except cx_Oracle.Error as error:
-        print(error)
+        return render_template('userdashboard.html')
 
 
     

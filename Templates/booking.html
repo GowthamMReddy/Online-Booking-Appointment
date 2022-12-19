@@ -11,9 +11,33 @@
         <div class="nav_dashboard">
 
             <h1>Booking Successful</h1>
-            
+
         </div>
        
-        <nav class="UserDashboard">
+        <nav class="UserBooking">
+            <table>
+                <tr>
+                    <th>User Name</th>
+                    <th>Age</th>
+                    <th>Lawyer Name</th>
+                    <th>Lawyer Address</th>
+                    <th>Lawyer contact</th>
+                </tr>
+                {% for row in bookinglist %}
+                <tr>
+                     <td><p>{{row.username}}</p></td>
+                     <td><p>{{row.age}}</p></td>
+                     <td><p>{{row.lawyername}}<p></td>
+                     <td><p>{{row.lawyeraddr}}</p></td>
+                     <td><p>{{row.lawyercontact}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        <form action="http://127.0.0.1:5000/cancelbooking" method="post" class="bookingcancel-form">
+            <div class="CancelBooking">
+                <input type="Submit" value="Cancel Booking" name="cancel_booking" id="cancel">
+            </div>
+        </form>
+
     </body>
 </html>      
