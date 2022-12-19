@@ -52,13 +52,12 @@ body
 
 .CancelBooking{
     padding: 20px;
-    margin-left: 800px;
+    margin-left: 650px;
     margin-top: 250px;
     width: 150px;
     height: 20px;
     border: 0;
     border-radius: 4px;
-    cursor: pointer;
 }
 
 .CancelBooking input{
@@ -66,8 +65,9 @@ body
     height: 50px;
     font-size: 25px;
     font:bold;
-    color:white;
-    background-color:cornflowerblue;
+    color:black;
+    background-color:white;
+    cursor: pointer;
 }
  .cancel :hover{
     transform: translateY(-5px);

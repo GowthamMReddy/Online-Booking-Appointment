@@ -79,7 +79,7 @@ def login_db():
 @app.route('/userdashboard_db', methods= ['POST','GET'])
 def userdashboard_db():
     User_Name = request.form['user_name']
-    Age = request.form['age']
+    Age = str(request.form['age'])
     LawyerName=request.form['lawyer_name']
     LawyerAddr=request.form['lawyer_addr']
     LawyerContact=request.form['lawyer_contact']
@@ -91,7 +91,7 @@ def userdashboard_db():
     connection = cx_Oracle.connect(path) 
     cursor = connection.cursor()
     try:
-        cursor.execute("create table Booking_App1 (user_name varchar(20),age number(10),lawyer_name varchar(10),lawyer_addr varchar(100), lawyer_contact(10)")
+        cursor.execute("create table Booking_App1 (user_name varchar(20),age varchar(10),lawyer_name varchar(10),lawyer_addr varchar(100), lawyer_contact varchar(10)")
     
     except:
         print("table present")
@@ -104,10 +104,33 @@ def userdashboard_db():
 
     isAvailable=True
     connection.commit()
-    return render_template('payment.html')
+    cursor.execute("""select user_name, age from Booking_App1 where user_name = :user_name and age= :age """,user_name = User_Name, age=Age)
+    data = cursor.fetchmany()
+    user = " "
+    for i in data:
+        print(len(i))
+        if i[0] == User_Name:
+             user = i
+             use = user[0]
+             use1 = user[1]
+             print(use1)
+        
+             use = use +" "+ use1
+             print(use)
+        return redirect(url_for("use", usr=use))
     
 
-@app.route('/payment', methods=['POST','GET'])
+@app.route("/<usr>")
+def use(usr):
+    return f"""<h1 style="margin-top:5rem;color:blue;text-align:center">{usr}</h1>
+     <form action="http://127.0.0.1:5000/transaction" method="post" class="bookingcancel-form">
+<center><button style="color:blue;text-align:center">submit</button> </center></form>"""
+
+@app.route('/transaction', methods=['POST','GET'] )
+def transaction():
+    return render_template('payment.html')
+
+@app.route('/payment', methods=['POST','GET'] )
 def payment():
     return render_template('booking.html')
 
@@ -126,7 +149,6 @@ def cancelbooking():
                 return render_template('userdashboard.html')
      except cx_Oracle.Error as error:
         return render_template('userdashboard.html')
-
 
     
        
